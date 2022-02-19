@@ -9,6 +9,7 @@ Requirement:
 To run the code checkout Exercise folder
 	1. Ensure the following properties in application.properties file (in resource folder) is updated to the correct Kafka server address and port.
 		spring.kafka.bootstrap-servers=127.0.0.1:9092
+		
 	2.Run the command below, on the Exercise folder: 
 		mvn spring-boot:run
 
