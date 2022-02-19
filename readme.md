@@ -1,7 +1,7 @@
 This is a Spring Boot Web application with Spring Kafka to demonstrate publishing message in JSON format to Kafka
 
 Requirement: 
-- Java 8 and above.
+- Java > 8.
 - Kafka (tested with version 3)
 - Maven 
 - IDE like VS Code
