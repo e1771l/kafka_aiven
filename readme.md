@@ -3,11 +3,13 @@ This is a Spring Boot Web application with Spring Kafka to demonstrate publishin
 Requirement: 
 - Java > 8.
 - Kafka (tested with version 3)
-- Maven 
-- IDE like VS Code
+- Maven
+
+Optional:
+- IDE like VS Code (WIth Spring Boot Extension)
 
 To run the code checkout Exercise folder
-1. Ensure the following properties in application.properties file (in resource folder) is updated to the correct Kafka server address and port.
+1. Ensure the following properties in ~application.properties~ file (in resource folder) is updated to the correct Kafka server address and port.
 				`spring.kafka.bootstrap-servers=127.0.0.1:9092`
 		
 2. Run the following command, on the Exercise folder: 
