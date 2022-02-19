@@ -6,15 +6,12 @@ import java.util.UUID;
 
 public class Ticker {
 
-    private String id= UUID.randomUUID().toString();
+
     private String symbol;
     private String buy;
     private String sell;
     private String timestamp;
 
-    public String getId() {
-        return id;
-    }
 
     public String getSymbol() {
         return symbol;
@@ -24,9 +21,6 @@ public class Ticker {
         this.symbol = symbol;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getBuy() {
         return buy;

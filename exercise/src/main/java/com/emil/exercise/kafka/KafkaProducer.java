@@ -1,5 +1,7 @@
 package com.emil.exercise.kafka;
 
+import java.util.UUID;
+
 import com.emil.exercise.model.Ticker;
 
 import org.slf4j.Logger;
@@ -21,8 +23,11 @@ public class KafkaProducer {
     private KafkaTemplate<String, Ticker> kafkaTemplate;
 
     public void sendMessage(Ticker ticker) {
-        logger.info(String.format("#### -> Producing message -> %s", ticker));
-        this.kafkaTemplate.send(kafkaTopic, ticker);
+        logger.info(String.format("publishing ==>", ticker.getSymbol()));
+
+        
+        String key=UUID.randomUUID().toString();
+        this.kafkaTemplate.send(kafkaTopic, key, ticker);
     }
 
     

@@ -29,12 +29,12 @@ public class ExerciseRestController {
     }
 
     @GetMapping(value = "/publish")
-    public void sendMessageToKafkaTopic(@RequestParam("symbol") String symbol) {
+    public void sendMessageToKafkaTopic(@RequestParam("symbol") String symbol, @RequestParam("buy") String buy, @RequestParam("sell") String sell) {
         Ticker ticker = new Ticker(); 
 
         ticker.setSymbol(symbol);
-        ticker.setBuy("172.01");
-        ticker.setSell("174.01");
+        ticker.setBuy(buy);
+        ticker.setSell(sell);
         ticker.setTimestamp(this.getTimeStamp());
 
         this.kafkaProducer.sendMessage(ticker);
