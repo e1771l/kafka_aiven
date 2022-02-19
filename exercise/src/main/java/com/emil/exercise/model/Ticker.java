@@ -1,6 +1,5 @@
 package com.emil.exercise.model;
 
-import java.util.UUID;
 
 // Model class to represent a stock ticker buy and sell price at a point of time.
 
