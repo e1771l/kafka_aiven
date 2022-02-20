@@ -18,18 +18,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/exercise")
 public class ExerciseRestController {
 
-
+    //Inject the KafkaProducer service
     @Autowired
     private KafkaProducer kafkaProducer;
-
 
     //get TimeStamp in ISO8601 format
     private String getTimeStamp(){
         return ZonedDateTime.now( ZoneOffset.UTC ).format( DateTimeFormatter.ISO_INSTANT );
     }
 
+    //Publish Kafka Even everytime a GET request is received on URI /exercise/publish    
     @GetMapping(value = "/publish")
-    public void sendMessageToKafkaTopic(@RequestParam("symbol") String symbol, @RequestParam("buy") String buy, @RequestParam("sell") String sell) {
+    public void sendMessageToKafkaTopic(@RequestParam("symbol") String symbol, 
+                                        @RequestParam("buy") String buy, 
+                                        @RequestParam("sell") String sell) {
+        //Initiate Ticker object, from request parameter
         Ticker ticker = new Ticker(); 
 
         ticker.setSymbol(symbol);
@@ -37,6 +40,7 @@ public class ExerciseRestController {
         ticker.setSell(sell);
         ticker.setTimestamp(this.getTimeStamp());
 
+        //Publish Ticker Object to Kafka broker in JSON format
         this.kafkaProducer.sendMessage(ticker);
     }
     

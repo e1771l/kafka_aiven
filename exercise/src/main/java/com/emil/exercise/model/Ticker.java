@@ -2,9 +2,7 @@ package com.emil.exercise.model;
 
 
 // Model class to represent a stock ticker buy and sell price at a point of time.
-
 public class Ticker {
-
 
     private String symbol;
     private String buy;
