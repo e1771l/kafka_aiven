@@ -9,7 +9,7 @@ Optional:
 - IDE like VS Code (WIth Spring Boot Extension)
 
 To run the code checkout Exercise folder
-1. Ensure the following properties in ~application.properties~ file (in resource folder) is updated to the correct Kafka server address and port.
+1. Ensure the following properties in ~application.properties~ file (in resource folder) is updated to the correct Kafka server address, port, and SSL configuration.
 				`spring.kafka.bootstrap-servers=127.0.0.1:9092`
 		
 2. Run the following command, on the Exercise folder: 
