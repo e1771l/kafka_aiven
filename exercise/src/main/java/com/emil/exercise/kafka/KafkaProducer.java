@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import com.emil.exercise.model.Ticker;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
@@ -19,9 +20,8 @@ public class KafkaProducer {
 
     /*Convenient method to pubish a messave to kafka broker*/
     public void sendMessage(Ticker ticker) {
-        // Using Random UUID as key for the Kafka Event
+        // Using Random UUID as key for the Kafka Message
         String key=UUID.randomUUID().toString();
-        
         this.kafkaTemplate.send(kafkaTopic, key, ticker);
     }
 }
